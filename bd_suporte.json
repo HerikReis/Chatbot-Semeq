@@ -1,0 +1,48 @@
+{"COLETA PERIODICA OFF LINE":{
+    "SISTEMA ONLINE":{
+        "COLETOR":{
+            "SMQ":{
+                "COLETOR NÃO LIGA":"procedimentos...",
+                "COLETOR TRAVADO":"procedimentos...",
+                "ALERTA DE RUIDO OU AUSENCIA DE SINAL":"procedimentos...",
+                "ALERTA DE OVERLOAD":"procedimentos...",
+                "ALERTA DE UNDERLOAD":"procedimentos...",
+                "FALHA NO TECLADO DE MEMBRANA":"procedimentos...",
+                "PROBLEMA NA CONEXÃO INTERNET VIA WIFI":"procedimentos...",
+                "PROBLEMA NA CONEXÃO INTERNET VIA USB":"procedimentos...",
+                "NÃO ESTA SALVANDO AS MEDIÇOES":"procedimentos..."
+                }},
+        "CAMERA TERMOGRÁFICA":{
+            "FLUKE TI-10":{
+                "EQUIPAMENTO NÃO LIGA":"procedimentos...",
+                "IMAGEM DESFOCADA":"procedimentos...",
+                "TERMOGRAMA PRETO":"procedimentos...",
+                "NÃO SALVA O TERMOGRAMA":"procedimentos...",
+                "NÃO CARREGA A BATERIA":"procedimentos...",
+                "CAMERA LIGA MAS NÃO FUNCIONA CORRETAMENTE":"procedimentos...",
+                "CAMERA EMBAÇADA OU VIDEOS LAVADOS":"procedimentos...",
+                "CAMERA NÃO SE CONECTA NO USB":"procedimentos...",
+                "CAMERA NÃO SEGURA CARGA":"procedimentos..."
+            },
+            "FLIR":{
+                "EQUIPAMENTO NÃO LIGA":"procedimentos...",
+                "IMAGEM DESFOCADA":"procedimentos...",
+                "TERMOGRAMA PRETO":"procedimentos...",
+                "NÃO SALVA O TERMOGRAMA":"procedimentos...",
+                "NÃO CARREGA A BATERIA":"procedimentos...",
+                "CAMERA LIGA MAS NÃO FUNCIONA CORRETAMENTE":"procedimentos...",
+                "CAMERA EMBAÇADA OU VIDEOS LAVADOS":"procedimentos...",
+                "CAMERA NÃO SE CONECTA NO USB":"procedimentos...",
+                "CAMERA NÃO SEGURA CARGA":"procedimentos..."
+            }},
+        "MTE":{
+            "SMQ945":{
+                "BATERIA BAIXA":"procedimentos...",
+                "NÃO LÊ CORRENTE":"procedimentos..."
+            }
+            }}},
+"INFRAESTRTURA":{},
+"MYSEMEQ":{},
+"PORTAL":{},
+"SISTEMA ONLINE":{}
+}
