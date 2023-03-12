@@ -66,4 +66,5 @@ class Banco_dados:
         conexao.commit()
         conexao.close()
 
-Banco_dados.inserir_json()
+#Banco_dados.criar_db()
+#Banco_dados.inserir_json()
