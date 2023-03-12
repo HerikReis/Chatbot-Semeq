@@ -16,14 +16,11 @@ os.system('cls')
 # Função para pré-processar o input do usuário
 def preprocess_input(text,lematizar=True):
     if lematizar:
-        # palavras que o modelo irá ignorar
-        stop_words = spacy.lang.pt.stop_words.STOP_WORDS
         # tirar radical (lematização)
         documento = nlp(text)
         text = []
         for token in documento:
             text.append(token.lemma_)
-        text = [palavra for palavra in text if palavra not in stop_words]
         text = ' '.join([str(elemento) for elemento in text if not elemento.isdigit()])
     # tirar pontuações 
     text = re.sub(r"[!#$%&'()*+,-./:;<=>?@[^_`{|}~]+", ' ', re.sub('[áàãâä]', 'a', re.sub('[éèêë]', 'e', re.sub('[íìîï]', 'i', re.sub('[óòõôö]', 'o', re.sub('[úùûü]', 'u', re.sub(r" +", ' ', text)))))))

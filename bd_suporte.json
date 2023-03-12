@@ -41,8 +41,314 @@
                 "NÃO LÊ CORRENTE":"procedimentos..."
             }
             }}},
-"INFRAESTRTURA":{},
-"MYSEMEQ":{},
-"PORTAL":{},
-"SISTEMA ONLINE":{}
-}
+"INFRAESTRTURA":{
+    "Link":{
+        "TELEFONICA BANDA LARGA":{
+            "120MB":{
+                "120_LINK DOWN":"procedimentos...",
+                "120_PERDA DE PACOTE / LENTIDÃO":"procedimentos..."
+                }},
+        "TELEFONICA DEDICADO":{
+            "30MB":{
+                "120_LINK DOWN":"procedimentos...",
+                "120_PERDA DE PACOTE / LENTIDÃO":"procedimentos..."
+                }},
+        "ALGAR DEDICADO":{
+            "40MB":{
+                "120_LINK DOWN":"procedimentos...",
+                "120_PERDA DE PACOTE / LENTIDÃO":"procedimentos..."
+                }}},
+    "VPN":{
+        "SABESP":{
+            "TUNEL1":{
+                "SEM COMUNICAÇÃO":"procedimentos..."},
+            "TUNEL2":{
+                "SEM COMUNICAÇÃO":"procedimentos..."}},
+        "AMBEV EUROPA":{
+            "TUNEL1":{
+                "SEM COMUNICAÇÃO":"procedimentos..."},
+            "TUNEL2":{
+                "SEM COMUNICAÇÃO":"procedimentos..."}},
+        "ONLINE SAZ":{
+            "TUNEL1":{
+                "SEM COMUNICAÇÃO":"procedimentos..."},
+            "TUNEL2":{
+                "SEM COMUNICAÇÃO":"procedimentos..."}},
+        "ONLINE NAZ":{
+            "TUNEL1":{
+                "SEM COMUNICAÇÃO":"procedimentos..."},
+            "TUNEL2":{
+                "SEM COMUNICAÇÃO":"procedimentos..."}},
+        "ONLINE APAC":{
+            "TUNEL1":{
+                "SEM COMUNICAÇÃO":"procedimentos..."},
+            "TUNEL2":{
+                "SEM COMUNICAÇÃO":"procedimentos..."
+                }}}},
+"MYSEMEQ":{
+    "SOFTWARE":{
+        "Integração":{
+            "SAP ABI SAZ":{
+                "RDP não foi integrado":"procedimentos..."
+            },
+            "SAP ABI EUROPA":{
+                "A baixa do RDP não foi integrada no MySEMEQ":"procedimentos..."
+            },
+            "EMAINT":{
+                "Não gerou ordem de serviço na aplica":"procedimentos..."
+            },
+            "Historiador SABESP":{
+                "Não gerou ordem de serviço na aplica":"procedimentos..."
+            }
+        },
+        "Semeq AWS API":{
+            "v1":{
+                "HTTP 502 Bad gateway":"procedimentos...",
+                "HTTP 408 Timeout":"procedimentos...",
+                "A API está indisponível":"procedimentos...",
+                "Um Endpoint específico da API não está acessível":"procedimentos...",
+                "API não retorna dados nem mensagem alguma":"procedimentos...",
+                "LENTIDÃO":"procedimentos...",
+                "PAGINA NÃO CARREGA":"procedimentos...",
+                "GRAFICO PIZZA NÃO CARREGA":"procedimentos...",
+                "PRIORIZAÇÃO NÃO CARREGA":"procedimentos..."
+            }
+        },
+        "Semeq API":{
+            "v1":{
+                "HTTP 502 Bad gateway":"procedimentos...",
+                "HTTP 408 Timeout":"procedimentos...",
+                "A API está indisponível":"procedimentos...",
+                "Um Endpoint específico da API não está acessível":"procedimentos...",
+                "API não retorna dados nem mensagem alguma":"procedimentos...",
+                "LENTIDÃO":"procedimentos...",
+                "PAGINA NÃO CARREGA":"procedimentos...",
+                "GRAFICO PIZZA NÃO CARREGA":"procedimentos...",
+                "PRIORIZAÇÃO NÃO CARREGA":"procedimentos..."
+            }
+        },
+        "Semeq Web":{
+            "17":{
+                "INTERFACE INACESSIVEL":"procedimentos..."
+            },
+            "13":{
+                "INTERFACE INACESSIVEL":"procedimentos...",
+                "SISTEMA LENTO":"procedimentos..."
+            }
+        },
+        "ABI MySEMEQ App":{
+            "2021":{
+                "NÃO ESTA LOGANDO NO APP":"procedimentos..."
+            }
+        },
+        "MySEMEQ App":{
+            "2014":{
+                "NÃO ESTA LOGANDO NO APP":"procedimentos..."
+            }
+        },
+        "ABInbev Web Platform":{
+            "2019":{
+                "NÃO ESTA LOGANDO":"procedimentos...",
+                "USUARIO DE ACESSO NÃO FUNCIONA":"procedimentos..."
+            }
+        },
+        "PowerBI":{
+            "v3 (Crowncork)":{
+                "DADOS DESATUALZIDOS":"procedimentos...",
+                "USUARIO DE ACESSO NÃO FUNCIONA":"procedimentos..."
+            }
+        },
+        "Vibracao":{
+            "Portal3":{
+                "PORTAL LENTO":"procedimentos...",
+                "PORTAL NÃO CARREGA":"procedimentos...",
+                "ARVORE NÃO CARREGA":"procedimentos..."
+            }
+        },
+        "Oleo":{
+            "Portal3":{
+                "PORTAL LENTO":"procedimentos...",
+                "PORTAL NÃO CARREGA":"procedimentos...",
+                "ARVORE NÃO CARREGA":"procedimentos..."
+            }
+        },
+        "Termografia":{
+            "Portal3":{
+                "PORTAL LENTO":"procedimentos...",
+                "PORTAL NÃO CARREGA":"procedimentos...",
+                "ARVORE NÃO CARREGA":"procedimentos..."
+            }
+        },
+        "PORTAL":{
+            "Vibracao":{
+                " Medidas na tendencia do analisador fora de ordem":"procedimentos..."
+            }
+        }
+}},
+"PORTAL":{
+    "SOFTWARE":{
+        "Integração":{
+            "SAP ABI SAZ":{
+                "RDP não foi integrado":"procedimentos..."
+            },
+            "SAP ABI EUROPA":{
+                "A baixa do RDP não foi integrada no MySEMEQ":"procedimentos..."
+            },
+            "EMAINT":{
+                "Não gerou ordem de serviço na aplica":"procedimentos..."
+            },
+            "Historiador SABESP":{
+                "Não gerou ordem de serviço na aplica":"procedimentos..."
+            }
+        },
+        "Semeq AWS API":{
+            "v1":{
+                "HTTP 502 Bad gateway":"procedimentos...",
+                "HTTP 408 Timeout":"procedimentos...",
+                "A API está indisponível":"procedimentos...",
+                "Um Endpoint específico da API não está acessível":"procedimentos...",
+                "API não retorna dados nem mensagem alguma":"procedimentos...",
+                "LENTIDÃO":"procedimentos...",
+                "PAGINA NÃO CARREGA":"procedimentos...",
+                "GRAFICO PIZZA NÃO CARREGA":"procedimentos...",
+                "PRIORIZAÇÃO NÃO CARREGA":"procedimentos..."
+            }
+        },
+        "Semeq API":{
+            "v1":{
+                "HTTP 502 Bad gateway":"procedimentos...",
+                "HTTP 408 Timeout":"procedimentos...",
+                "A API está indisponível":"procedimentos...",
+                "Um Endpoint específico da API não está acessível":"procedimentos...",
+                "API não retorna dados nem mensagem alguma":"procedimentos...",
+                "LENTIDÃO":"procedimentos...",
+                "PAGINA NÃO CARREGA":"procedimentos...",
+                "GRAFICO PIZZA NÃO CARREGA":"procedimentos...",
+                "PRIORIZAÇÃO NÃO CARREGA":"procedimentos..."
+            }
+        },
+        "Semeq Web":{
+            "17":{
+                "INTERFACE INACESSIVEL":"procedimentos..."
+            },
+            "13":{
+                "INTERFACE INACESSIVEL":"procedimentos...",
+                "SISTEMA LENTO":"procedimentos..."
+            }
+        },
+        "ABI MySEMEQ App":{
+            "2021":{
+                "NÃO ESTA LOGANDO NO APP":"procedimentos..."
+            }
+        },
+        "MySEMEQ App":{
+            "2014":{
+                "NÃO ESTA LOGANDO NO APP":"procedimentos..."
+            }
+        },
+        "ABInbev Web Platform":{
+            "2019":{
+                "NÃO ESTA LOGANDO":"procedimentos...",
+                "USUARIO DE ACESSO NÃO FUNCIONA":"procedimentos..."
+            }
+        },
+        "PowerBI":{
+            "v3 (Crowncork)":{
+                "DADOS DESATUALZIDOS":"procedimentos...",
+                "USUARIO DE ACESSO NÃO FUNCIONA":"procedimentos..."
+            }
+        },
+        "Vibracao":{
+            "Portal3":{
+                "PORTAL LENTO":"procedimentos...",
+                "PORTAL NÃO CARREGA":"procedimentos...",
+                "ARVORE NÃO CARREGA":"procedimentos..."
+            }
+        },
+        "Oleo":{
+            "Portal3":{
+                "PORTAL LENTO":"procedimentos...",
+                "PORTAL NÃO CARREGA":"procedimentos...",
+                "ARVORE NÃO CARREGA":"procedimentos..."
+            }
+        },
+        "Termografia":{
+            "Portal3":{
+                "PORTAL LENTO":"procedimentos...",
+                "PORTAL NÃO CARREGA":"procedimentos...",
+                "ARVORE NÃO CARREGA":"procedimentos..."
+            }
+        },
+        "PORTAL":{
+            "Vibracao":{
+                " Medidas na tendencia do analisador fora de ordem":"procedimentos..."
+            }
+        }
+}},
+"SISTEMA ONLINE":{
+    "SOFTWARE ON":{
+        "Interface Online Saz":{
+            "v1":{
+                "HTTP 502 Bad gateway":"procedimentos...",
+                "HTTP 408 Timeout":"procedimentos...",
+                "A API está indisponível":"procedimentos...",
+                "Um Endpoint específico da API não está acessível":"procedimentos...",
+                "API não retorna dados nem mensagem alguma":"procedimentos...",
+                "LENTIDÃO":"procedimentos...",
+                "PAGINA NÃO CARREGA":"procedimentos...",
+                "GRAFICO PIZZA NÃO CARREGA":"procedimentos...",
+                "PRIORIZAÇÃO NÃO CARREGA":"procedimentos..."
+            }
+        },
+        "Interface Online Apac":{
+            "v1":{
+                "HTTP 502 Bad gateway":"procedimentos...",
+                "HTTP 408 Timeout":"procedimentos...",
+                "A API está indisponível":"procedimentos...",
+                "Um Endpoint específico da API não está acessível":"procedimentos...",
+                "API não retorna dados nem mensagem alguma":"procedimentos...",
+                "LENTIDÃO":"procedimentos...",
+                "PAGINA NÃO CARREGA":"procedimentos...",
+                "GRAFICO PIZZA NÃO CARREGA":"procedimentos...",
+                "PRIORIZAÇÃO NÃO CARREGA":"procedimentos..."
+            }
+        },
+        "Interface Online Naz":{
+            "v1":{
+                "HTTP 502 Bad gateway":"procedimentos...",
+                "HTTP 408 Timeout":"procedimentos...",
+                "A API está indisponível":"procedimentos...",
+                "Um Endpoint específico da API não está acessível":"procedimentos...",
+                "API não retorna dados nem mensagem alguma":"procedimentos...",
+                "LENTIDÃO":"procedimentos...",
+                "PAGINA NÃO CARREGA":"procedimentos...",
+                "GRAFICO PIZZA NÃO CARREGA":"procedimentos...",
+                "PRIORIZAÇÃO NÃO CARREGA":"procedimentos..."
+            }
+        }},
+    "EQUIPAMENTOS ON":{
+        "Sensor":{
+            "Axon":{
+                "Vínculo não aplicado em ambas as direções do sensor":""
+            }
+        },
+        "Gateway":{
+            "SMQ990":{
+                "GW NÃO ENTRA NA INTERFACE":"procedimentos...",
+                "Não conecta na internet do cliente":"procedimentos...",
+                "ESTAVA CONECTADO E NAO ESTA MAIS":"procedimentos...",
+                "NÃO COMUNICA COM SENSOR":"procedimentos...",
+                "GW ONLINE POREM COM DATA E HORAS ERRADAS":"procedimentos...",
+                "Gateway conectado mas nao sobe na interface":"procedimentos..."
+            },
+            "SMQ915":{
+                "GW NÃO ENTRA NA INTERFACE":"procedimentos...",
+                "Não conecta na internet do cliente":"procedimentos...",
+                "ESTAVA CONECTADO E NAO ESTA MAIS":"procedimentos...",
+                "NÃO COMUNICA COM SENSOR":"procedimentos...",
+                "GW ONLINE POREM COM DATA E HORAS ERRADAS":"procedimentos...",
+                "Gateway conectado mas nao sobe na interface":"procedimentos..."
+            }
+        }
+    }
+}}

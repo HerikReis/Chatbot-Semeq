@@ -8,6 +8,7 @@ class Banco_dados:
         # cria uma tabela chamada 'mensagens' com duas colunas: 'mensagem' e 'resposta'
         cursor = conexao.cursor()
         cursor.execute('CREATE TABLE problemas (assunto, app_device, interface, modelo, problema, solucao)')
+        cursor.execute('CREATE TABLE menssagens ()')
         conexao.commit()
         # fecha a conexão com o banco de dados
         conexao.close()
@@ -66,5 +67,5 @@ class Banco_dados:
         conexao.commit()
         conexao.close()
 
-#Banco_dados.criar_db()
-#Banco_dados.inserir_json()
+# Banco_dados.criar_db()
+# Banco_dados.inserir_json()
