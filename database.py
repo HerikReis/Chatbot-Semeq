@@ -7,8 +7,12 @@ class Banco_dados:
         conexao = sqlite3.connect('database.db')
         # cria uma tabela chamada 'mensagens' com duas colunas: 'mensagem' e 'resposta'
         cursor = conexao.cursor()
-        cursor.execute('CREATE TABLE problemas (assunto, app_device, interface, modelo, problema, solucao)')
-        cursor.execute('CREATE TABLE menssagens ()')
+        #cursor.execute('CREATE TABLE problemas (assunto, app_device, interface, modelo, problema, solucao)')
+        cursor.execute('CREATE TABLE context_introducao (msg_introducao,banco_introducao,msg_problema,banco_problema)')
+        cursor.execute('CREATE TABLE context_despedida (msg_despedida,banco_despedida)')
+        cursor.execute('CREATE TABLE erro (msg_entendeu,msg_encaminhamento)')
+        cursor.execute('CREATE TABLE context_problema (assunto,pergunta_assunto,interface,pergunta_interface,problema,pergunta_problema)')
+        cursor.execute('CREATE TABLE context_feedback (pergunta_feedback,banco_feedback_positivo,banco_feedback_negativo)')
         conexao.commit()
         # fecha a conexão com o banco de dados
         conexao.close()
