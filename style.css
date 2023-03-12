@@ -1,0 +1,41 @@
+/* Defina as fontes e tamanhos de fonte */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  /* Estilo do chat window */
+  #chat-window {
+    width: 400px;
+    height: 400px;
+    margin: 50px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    overflow-y: scroll;
+  }
+  
+  /* Estilo da área de texto de saída */
+  #output {
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo da caixa de entrada e botão de envio */
+  #input {
+    width: 70%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  #submit {
+    width: 25%;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }

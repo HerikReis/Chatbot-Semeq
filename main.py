@@ -4,7 +4,6 @@ import nltk
 import spacy
 import re
 import string
-import json
 from os import system
 from database import Banco_dados
 from nltk.tokenize import word_tokenize
@@ -29,23 +28,13 @@ def preprocess_input(text):
     text = [palavra for palavra in text if palavra not in stop_words and palavra not in stop_punct]
     text = ' '.join([str(elemento) for elemento in text if not elemento.isdigit()])
     # tirar pontuações 
-    text = re.sub(r"[!#$%&'()*+,-./:;<=>?@[^_`{|}~]+", ' ',text)
+    text = re.sub(r"[!#$%&'()*+,-./:;<=>?@[^_`{|}~]+", ' ', re.sub('[áàãâä]', 'a', re.sub('[éèêë]', 'e', re.sub('[íìîï]', 'i', re.sub('[óòõôö]', 'o', re.sub('[úùûü]', 'u', re.sub(r" +", ' ', text)))))))
     # tirar espaços em branco
-    text = re.sub(r" +", ' ',text)
+    text = re.sub(r'\s+', ' ',text)
     # Tokenize o texto em palavras
     text = word_tokenize(text)
     # Converter todas as palavras para minúsculas
     text = [word.lower() for word in text]
-    # tirar acentos
-    text = re.sub(r"[áàâã]+", 'a',text)
-    # tirar acentos
-    text = re.sub(r"[éèê]+", 'e',text)
-    # tirar acentos
-    text = re.sub(r"[íìî]+", 'i',text)
-    # tirar acentos
-    text = re.sub(r"[óòôõ]+", 'o',text)
-    # tirar acentos
-    text = re.sub(r"[úùû]+", 'u',text)
     # Retornar as palavras como uma string única
     text = " ".join(text)
     return text
@@ -84,12 +73,15 @@ def get_response(user_input):
         return resposta_chatbot
 
 
+def chatbot():
+    textos_saida = ('sair','tchau','exit','esc')
+    while True:
+        user_input = input('Usuário: ')
+        if user_input not in textos_saida:
+            print('Chatbot:',get_response(user_input))
+        else:
+            print('Chatbot: Até breve!')
+            break 
 
-textos_saida = ('sair','tchau','exit','esc')
-while True:
-  user_input = input('Usuário: ').lower()
-  if user_input not in textos_saida:
-    print('Chatbot:',get_response(user_input))
-  else:
-    print('Chatbot: Até breve!')
-    break
+if __name__ == "__main__":
+    chatbot()
