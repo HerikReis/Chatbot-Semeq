@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import scrolledtext
 import json
-from chatbot import get_response
+from chatbot import chatbot_GUI
 
 class ChatBotGUI:
     def __init__(self, master):
@@ -30,7 +30,7 @@ class ChatBotGUI:
         self.chat_history.append(('usuário', user_input))
         self.json_data["input_user"] = user_input
         # Obter resposta do chatbot
-        bot_response = get_response(user_input)
+        bot_response = chatbot_GUI(user_input)
         # Adicionar resposta do chatbot ao histórico de bate-papo
         self.chat_history.append(('chatbot', bot_response))
         self.json_data["resposta"] = bot_response
@@ -39,9 +39,6 @@ class ChatBotGUI:
         self.chat_log.insert(tk.END, 'ChatBot: ' + bot_response + '\n')
         # Limpar caixa de entrada de texto
         self.input_box.delete(0, tk.END)
-        # Salvar histórico em um arquivo JSON
-        with open('chat_history.json', 'w') as f:
-            json.dump(self.json_data, f)
 
 root = tk.Tk()
 my_gui = ChatBotGUI(root)

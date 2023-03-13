@@ -18,23 +18,33 @@ class Banco_dados:
         conexao.close()
 
     def inserir_db():
-        novos_valores = ['oi','ola','eai','salve']
+        novos_valores = [
+            "sim",
+            "s",
+            "ss",
+            "yes",
+            "si",
+            "sí",
+            "isso",
+            "foi",
+            "bom"
+        ]
         # estabelece uma conexão com o banco de dados
         conexao = sqlite3.connect('database.db')
         # insere algumas mensagens e respostas na tabela
         cursor = conexao.cursor()
         for valor in novos_valores:
-            cursor.execute("INSERT INTO mensagens (resposta) VALUES (?)", (valor,))
+            cursor.execute("INSERT INTO context_feedback (banco_feedback_positivo) VALUES (?)", (valor,))
         conexao.commit()
         # fecha a conexão com o banco de dados
         conexao.close()
 
-    def ler_db():
+    def ler_db(column,table):
         # estabelece uma conexão com o banco de dados
         conexao = sqlite3.connect('database.db')
         # Executa a instrução SQL SELECT para obter os dados da coluna desejada
         cursor = conexao.cursor()
-        cursor.execute("SELECT problema FROM problemas")
+        cursor.execute(f"SELECT {column} FROM {table}")
         # Iterar sobre os resultados e imprimir na tela
         dados =[]
         for resultado in cursor.fetchall():
@@ -73,3 +83,10 @@ class Banco_dados:
 
 # Banco_dados.criar_db()
 # Banco_dados.inserir_json()
+# Banco_dados.inserir_db()
+
+# conexao = sqlite3.connect('database.db')
+# cursor = conexao.cursor()
+# cursor.execute("DELETE FROM context_feedback")
+# conexao.commit()
+# conexao.close()
