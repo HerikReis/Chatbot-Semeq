@@ -77,18 +77,6 @@ class Tratamento:
         return vetor_encontrado,indices_sentenca
 
 #############################################################################################
-def feedback(user_input):
-    user_input = user_input.lower().split()
-    feedback_negativo = ['não','nao','n','nn','nops','no']
-    feedback_positivo = ['sim','ss','s','yes','si','foi']
-    for i in user_input:
-        if i in feedback_negativo:
-            return -1, False
-        elif i in feedback_positivo:
-            return True, False
-        else:
-            return False, True
-#############################################################################################
 class Contexto:
     # analisa o contexto
     def context_parser(input_user,context):
@@ -129,9 +117,18 @@ class Contexto:
         list_vetor = [vetor_contexto1,vetor_contexto2,vetor_contexto3,vetor_contexto4]
         max_vetor = max(list_vetor)
         if list_vetor.index(max_vetor) == 0:
-            return 'context_introducao'
+            columns = ("banco_introducao","banco_problema")
+            context
+            for i in columns:
+                context_introducao = Tratamento.tf_idf(input_user,i)
+                
+                table = 'context_introducao'
+                column = {"resposta":"msg_introducao","input":"banco_introducao"}
+            return table,column
         elif list_vetor.index(max_vetor) == 1:
-            return 'context_despedida'
+            table = 'context_despedida'
+            column = {"resposta":"msg_despedida","input":"banco_despedida"}
+            return table,column
         elif list_vetor.index(max_vetor) == 2:
             return 'context_feedback'
         elif list_vetor.index(max_vetor) == 3:
@@ -145,52 +142,40 @@ def get_response(input_user, indice=0):
     user_input = input_user
     # Pré-processar o input do usuário
     user_input = Tratamento.preprocess(user_input)
-    count,passar = feedback(input_user)
+    # define contexto
+    chat_context = Contexto.context(user_input)
     resposta_chatbot = []
-    if passar:
-        lista_db = []
-        db = Banco_dados.ler_db('problema','problemas')
-        for i in db:
-            lista_db.append(Tratamento.preprocess(i))
-        vetor_encontrado,indice_sentenca = Tratamento.tf_idf(user_input,lista_db)
+    lista_db = []
+    db = Banco_dados.ler_db('problema',chat_context)
+    for i in db:
+        lista_db.append(Tratamento.preprocess(i))
+    vetor_encontrado,indice_sentenca = Tratamento.tf_idf(user_input,lista_db)
+    if (len(vetor_encontrado) == 0):
+        vetor_encontrado,indice_sentenca = Tratamento.tf_idf(user_input,db)
         if (len(vetor_encontrado) == 0):
-            vetor_encontrado,indice_sentenca = Tratamento.tf_idf(user_input,db)
-            if (len(vetor_encontrado) == 0):
-                resposta_chatbot.append('Desculpe, mas não entendi!')
-                entendeu = False
-            else:
-                resposta_chatbot.append(db[indice_sentenca[indice]])
-                entendeu = True
-        else:
-            resposta_chatbot.append(db[indice_sentenca[indice]])
-            entendeu = True
-    elif not passar and count == True:
-        resposta_chatbot.append('Ótimo, se precisar de mais alguma coisa estarei aqui!')
-        entendeu = False
-    else:
-        with open(os.path.join("\\Users\\herik\\OneDrive\\Área de Trabalho\\chatbot\\logs", 'log_chat.json'), 'r+') as f:
-            log = json.load(f)
-        if log[-1]['indice'] == indice:
-            resposta_chatbot.append("Desculpe, não tenho mais soluções para isso!")
+            resposta_chatbot.append('Desculpe, mas não entendi!')
             entendeu = False
         else:
-            indice = log[-1]['indice'] + count
             resposta_chatbot.append(db[indice_sentenca[indice]])
             entendeu = True
+    else:
+        resposta_chatbot.append(db[indice_sentenca[indice]])
+        entendeu = True
+    entendeu = False
     log_chat(input_user,resposta_chatbot,indice)
     return resposta_chatbot,entendeu
 
 def log_chat(pergunta,resposta,indice,diretorio="\\Users\\Semeq\\Desktop\\Chatbot-Semeq\\logs"):
     if os.path.exists(diretorio):
         if os.path.isfile(os.path.join(diretorio, 'log_chat.json')):
-            with open(os.path.join(diretorio, 'log_chat.json'), 'r+') as f:
+            with open(os.path.join(diretorio, 'log_chat.json'), 'r+', encoding='utf-8') as f:
                 log = json.load(f)
                 num = len(log) + 1
                 log.append({"pergunta": pergunta, "resposta": resposta, "indice": indice})
                 f.seek(0)
                 json.dump(log, f, indent=4)
         else:
-            with open(os.path.join(diretorio, 'log_chat.json'), 'w') as f:
+            with open(os.path.join(diretorio, 'log_chat.json'), 'w', encoding='utf-8') as f:
                 log = [{"pergunta": pergunta, "resposta": resposta, "indice": indice}]
                 json.dump(log, f, indent=4)
     else:
@@ -209,7 +194,7 @@ def chatbot_cmd():
                 print('Chatbot: Esta resposta foi útil?')
         else:
             print('Chatbot: Até breve!')
-            with open("\\Users\\Semeq\\Desktop\\Chatbot-Semeq\\logs\\log_chat.json", 'w') as f:
+            with open("\\Users\\Semeq\\Desktop\\Chatbot-Semeq\\logs\\log_chat.json", 'w', encoding='utf-8') as f:
                 json.dump([], f)
             break 
 
@@ -217,16 +202,17 @@ def chatbot_GUI(user_input):
     textos_saida = ('sair','tchau','exit','esc')
     if user_input not in textos_saida:
         resposta_chatbot,entendeu = get_response(user_input)
-        for i in resposta_chatbot:
-            return i
-        if entendeu:
-            return 'Esta resposta foi útil?'
+        return resposta_chatbot[0]
+
     else:
-        with open(os.path.join("\\Chatbot-Semeq\\logs\\log_chat.json"), 'w') as f:
+        with open(os.path.join("\\Chatbot-Semeq\\logs\\log_chat.json"), 'w', encoding='utf-8') as f:
             json.dump([], f)
         return 'Chatbot: Até breve!'
 
 if __name__ == "__main__":
-    chatbot_cmd()
-    # a = input(': ')
-    # print(Contexto.context(a))
+    # chatbot_cmd()
+    textos_saida = ['bosta','lixo','cuzão','eai, blz?','eai']
+    c = input(': ')
+    for i in textos_saida:
+        a,b = Tratamento.tf_idf(c,[i])
+        print(a)
